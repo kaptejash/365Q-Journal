@@ -28,6 +28,8 @@ namespace _365Q_Journal
         private const String FAVORITES = "Favorites";
         private const String SETTINGS = "Settings";
 
+        private bool isDarkMode = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -67,6 +69,28 @@ namespace _365Q_Journal
                 {
                     menuItem.IsActive = false;
                 }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.isDarkMode = !this.isDarkMode;
+
+            if (this.isDarkMode)
+            {
+                Wpf.Ui.Appearance.ApplicationThemeManager.Apply(
+                  Wpf.Ui.Appearance.ApplicationTheme.Dark, // Theme type
+                  Wpf.Ui.Controls.WindowBackdropType.None,  // Background type
+                  false                                      // Whether to change accents automatically
+                );
+
+            } else
+            {
+                Wpf.Ui.Appearance.ApplicationThemeManager.Apply(
+                  Wpf.Ui.Appearance.ApplicationTheme.Light, // Theme type
+                  Wpf.Ui.Controls.WindowBackdropType.None,  // Background type
+                  false                                      // Whether to change accents automatically
+                );
             }
         }
     }

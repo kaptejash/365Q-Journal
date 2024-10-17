@@ -8,12 +8,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1280"
         d:DesignHeight="1650"
-        d:DesignWidth="1000"
-        ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
-        ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-        Foreground="{DynamicResource TextFillColorPrimaryBrush}">
+        d:DesignWidth="1000">
+
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left" MaxWidth="150">
+        <StackPanel DockPanel.Dock="Left" MaxWidth="150" Margin="0 0 5 0">
             <ui:NavigationView x:Name="RootNavigation" IsBackButtonVisible="Collapsed" PaneTitle="365Q">
                 <!--
                     <ui:NavigationView.AutoSuggestBox> 
@@ -32,7 +30,7 @@
                 </ui:NavigationView.FooterMenuItems>
             </ui:NavigationView>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Top">
+        <StackPanel DockPanel.Dock="Top" Margin="0 0 0 5">
             <Grid HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -49,12 +47,7 @@
                     <Label>My First Journal</Label>
                 </StackPanel>
                 <StackPanel Grid.Row = "0" Grid.Column = "2" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <Menu>
-                        <ui:MenuItem Icon="{ui:SymbolIcon MoreVertical24}">
-                            <MenuItem Header="Dark" Icon="{ui:SymbolIcon WeatherMoon24}"/>
-                            <MenuItem Header="Light" Icon="{ui:SymbolIcon WeatherSunny24}"/>
-                        </ui:MenuItem>
-                    </Menu>
+                    <ui:Button Margin="5" Icon="{ui:SymbolIcon WeatherSunny24}" Click="Button_Click"/>
                 </StackPanel>
             </Grid>
         </StackPanel>
@@ -66,6 +59,6 @@
         <StackPanel DockPanel.Dock="Bottom">
             <Label HorizontalAlignment="Center">Bottom</Label>
         </StackPanel>
-        <Frame x:Name="MainFrame" />
+        <Frame x:Name="MainFrame" Margin="5"/>
     </DockPanel>
 </Window>
