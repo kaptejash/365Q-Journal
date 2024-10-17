@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using _365Q_Journal.Views;
+using Wpf.Ui.Controls;
 
 namespace _365Q_Journal
 {
@@ -20,14 +22,52 @@ namespace _365Q_Journal
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const String DASHBOARD = "Dashboard";
+        private const String JOURNAL = "Journal";
+        private const String PROMPTS = "Prompts";
+        private const String FAVORITES = "Favorites";
+        private const String SETTINGS = "Settings";
+
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Content = new DashboardPage();
         }
 
-        private void TreeViewItem_Selected(object sender, RoutedEventArgs e)
+        private void NavigationViewItem_Click(object sender, RoutedEventArgs e)
         {
-
+            foreach (NavigationViewItem menuItem in RootNavigation.MenuItems)
+            {
+                if (menuItem.Equals(sender))
+                {
+                    menuItem.IsActive = true;
+                    switch(menuItem.Content)
+                    {
+                        case DASHBOARD:
+                            MainFrame.Content = new DashboardPage();
+                            break;
+                        case JOURNAL:
+                            MainFrame.Content = new JournalPage();
+                            break;
+                        case PROMPTS:
+                            MainFrame.Content = new PromptListPage();
+                            break;
+                        case FAVORITES:
+                            MainFrame.Content = new FavoritesPage();
+                            break;
+                        case SETTINGS:
+                            MainFrame.Content = new SettingsPage();
+                            break;
+                        default:
+                            new Exception("Invalid Menu Item");
+                            break;
+                    }
+                }
+                else
+                {
+                    menuItem.IsActive = false;
+                }
+            }
         }
     }
 }

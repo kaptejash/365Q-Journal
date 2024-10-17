@@ -21,11 +21,11 @@
                     </ui:NavigationView.AutoSuggestBox>
                 -->
                 <ui:NavigationView.MenuItems>
-                    <ui:NavigationViewItem Content="Dashboard"  Icon="{ui:SymbolIcon Board24}"/>
-                    <ui:NavigationViewItem Content="Journal"  Icon="{ui:SymbolIcon Book24}" IsActive="True"/>
-                    <ui:NavigationViewItem Content="Prompts"  Icon="{ui:SymbolIcon AppsList24}"/>
-                    <ui:NavigationViewItem Content="Favorites"  Icon="{ui:SymbolIcon Star24}"/>
-                    <ui:NavigationViewItem Content="Settings"  Icon="{ui:SymbolIcon Settings24}"/>
+                    <ui:NavigationViewItem Content="Dashboard"  Icon="{ui:SymbolIcon Board24}" Click="NavigationViewItem_Click" IsActive="True"/>
+                    <ui:NavigationViewItem Content="Journal"  Icon="{ui:SymbolIcon Book24}" Click="NavigationViewItem_Click"/>
+                    <ui:NavigationViewItem Content="Prompts"  Icon="{ui:SymbolIcon AppsList24}" Click="NavigationViewItem_Click"/>
+                    <ui:NavigationViewItem Content="Favorites"  Icon="{ui:SymbolIcon Star24}" Click="NavigationViewItem_Click"/>
+                    <ui:NavigationViewItem Content="Settings"  Icon="{ui:SymbolIcon Settings24}" Click="NavigationViewItem_Click"/>
                 </ui:NavigationView.MenuItems>
                 <ui:NavigationView.FooterMenuItems>
                     <ui:NavigationViewItem Content="Logout"  Icon="{ui:SymbolIcon SignOut24}"/>                    
@@ -66,114 +66,6 @@
         <StackPanel DockPanel.Dock="Bottom">
             <Label HorizontalAlignment="Center">Bottom</Label>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Bottom">
-            <!--
-                <Label HorizontalAlignment="Center" VerticalAlignment="Center">Center</Label>
-            -->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <StackPanel Orientation="Vertical" Width="300" HorizontalAlignment="Left">
-                    <ComboBox Width="100" HorizontalAlignment="Left">
-                        <ComboBoxItem Content="2023"></ComboBoxItem>
-                        <ComboBoxItem Content="2024" IsSelected="True"></ComboBoxItem>
-                        <ComboBoxItem Content="2025"></ComboBoxItem>
-                    </ComboBox>
-                    <TreeView AllowDrop="True">
-                        <TreeViewItem Header="January" IsExpanded="False">
-                            <TreeViewItem Header="January 1st"/>
-                            <TreeViewItem Header="January 2nd"/>
-                            <TreeViewItem Header="January 3nd"/>
-                            <TreeViewItem Header="January 4th"/>
-                            <TreeViewItem Header="January 5th"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="February" IsExpanded="False">
-                            <TreeViewItem Header="February 1st"/>
-                            <TreeViewItem Header="February 2nd"/>
-                            <TreeViewItem Header="February 3nd"/>
-                            <TreeViewItem Header="February 4th"/>
-                            <TreeViewItem Header="February 5th"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="March" IsExpanded="False">
-                            <TreeViewItem Header="March 1st"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="April" IsExpanded="False">
-                            <TreeViewItem Header="April 1st"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="May" IsExpanded="False">
-                            <TreeViewItem Header="May 1st"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="June" IsExpanded="False">
-                            <TreeViewItem Header="June 1st"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="July" IsExpanded="False">
-                            <TreeViewItem Header="July 1st"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="August" IsExpanded="False">
-                            <TreeViewItem Header="August 1st"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="September" IsExpanded="False">
-                            <TreeViewItem Header="September 1st"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="October" IsExpanded="True">
-                            <TreeViewItem Header="October 1st"/>
-                            <TreeViewItem Header="October 2nd"/>
-                            <TreeViewItem Header="October 3nd"/>
-                            <TreeViewItem Header="October 4th" IsSelected="True"/>
-                            <TreeViewItem Header="October 5th"/>
-                            <TreeViewItem Header="October 6th"/>
-                            <TreeViewItem Header="October 7th"/>
-                            <TreeViewItem Header="October 8th"/>
-                            <TreeViewItem Header="October 9th"/>
-                            <TreeViewItem Header="October 10th"/>
-                            <TreeViewItem Header="October 11th"/>
-                            <TreeViewItem Header="October 12th"/>
-                            <TreeViewItem Header="October 13th"/>
-                            <TreeViewItem Header="October 14th"/>
-                            <TreeViewItem Header="October 15th"/>
-                            <TreeViewItem Header="October 16th"/>
-                            <TreeViewItem Header="October 17th"/>
-                            <TreeViewItem Header="October 18th"/>
-                            <TreeViewItem Header="October 19th"/>
-                            <TreeViewItem Header="October 20th"/>
-                            <TreeViewItem Header="October 21st"/>
-                            <TreeViewItem Header="October 22nd"/>
-                            <TreeViewItem Header="October 23rd"/>
-                            <TreeViewItem Header="October 24th"/>
-                            <TreeViewItem Header="October 25th"/>
-                            <TreeViewItem Header="October 26th"/>
-                            <TreeViewItem Header="October 27th"/>
-                            <TreeViewItem Header="October 28th"/>
-                            <TreeViewItem Header="October 29th"/>
-                            <TreeViewItem Header="October 30th"/>
-                            <TreeViewItem Header="October 31th"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="November" IsExpanded="False">
-                            <TreeViewItem Header="November 1st"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="December" IsExpanded="False">
-                            <TreeViewItem Header="December 1st"/>
-                        </TreeViewItem>
-                    </TreeView>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Stretch">
-                    <StackPanel HorizontalAlignment="Left">
-                        <Label>Describe your happy place. Where in the world do you feel most happy and at peace?</Label>
-                        <ui:TextBox PlaceholderText="Type something..." TextWrapping="Wrap" AcceptsReturn="True" HorizontalAlignment="Stretch" Height="300"/>
-                    </StackPanel>
-
-                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
-                        <Label VerticalAlignment="Center" Margin="0 0 10 0">Rate your day:</Label>
-                        <ui:RatingControl HalfStarEnabled="False"/>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Right">
-                        <ui:Button Content="Save" HorizontalAlignment="Right" Appearance="Primary"></ui:Button>
-                    </StackPanel>
-                    <StackPanel>
-                        <Label>Previous Entry: </Label>
-                        <Expander Header="October 1, 2022" Content="This is in the content"/>
-                        <Expander Header="October 1, 2023" Content="This is in the content"/>
-                    </StackPanel>
-                </StackPanel>
-            </StackPanel>
-        </StackPanel>
+        <Frame x:Name="MainFrame" />
     </DockPanel>
 </Window>
